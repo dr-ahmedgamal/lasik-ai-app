@@ -9,13 +9,13 @@ le = joblib.load("label_encoder.pkl")
 
 st.title("🔬 LASIK Surgery Outcome Predictor")
 
-sph = st.number_input("Spherical (D)", -10.0, 10.0, -3.0)
-cyl = st.number_input("Cylinder (D)", -6.0, 6.0, -1.0)
-k1 = st.number_input("K1 (D)", 35.0, 50.0, 43.0)
-k2 = st.number_input("K2 (D)", 35.0, 50.0, 44.0)
-pachy = st.number_input("Corneal Thickness (µm)", 400, 700, 520)
-bcva = st.number_input("Pre-op BCVA (decimal)", 0.0, 1.2, 0.3)
-age = st.number_input("Age", 10, 70, 25)
+sph = st.number_input("Spherical (D)", -10.0, 10.0, value=None, format="%.2f")
+cyl = st.number_input("Cylinder (D)", -6.0, 6.0, value=None, format="%.2f")
+k1 = st.number_input("K1 (D)", 35.0, 50.0, value=None, format="%.2f")
+k2 = st.number_input("K2 (D)", 35.0, 50.0, value=None, format="%.2f")
+pachy = st.number_input("Corneal Thickness (µm)", 400, 700, value=None)
+bcva = st.number_input("Pre-op BCVA (decimal)", 0.0, 1.2, value=None, format="%.2f")
+age = st.number_input("Age", 10, 70, value=None)
 
 if st.button("Predict"):
     input_df = pd.DataFrame([[sph, cyl, k1, k2, pachy, bcva, age]],
