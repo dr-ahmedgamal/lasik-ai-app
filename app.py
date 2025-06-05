@@ -27,8 +27,8 @@ bcva = st.number_input("Pre-op BCVA (decimal)", value=0.8)
 se = sph + (cyl / 2)
 k_avg = (k1 + k2) / 2
 
-input_features = pd.DataFrame([[age, sph, cyl, k1, k2, pachy, bcva, se, k_avg]],
-                              columns=["Age", "Sph", "Cyl", "K1", "K2", "Pachy", "BCVA", "SE", "Kavg"])
+input_features = pd.DataFrame([[sph, cyl, k1, k2, pachy, bcva, age, se, k_avg]],
+    columns=["Spherical", "Cylinder", "K1", "K2", "Pachymetry", "Pre-op BCVA", "Age", "SE", "Kavg"])
 
 # Predict Post-op Values
 post_bcva = model_bcva.predict(input_features)[0]
