@@ -7,10 +7,10 @@ reg_model = joblib.load("model.pkl")
 class_model = joblib.load("surgery_model.pkl")
 le = joblib.load("label_encoder.pkl")
 
-st.title("🔬 LASIK Surgery Outcome Predictor")
+st.title("🔬 LASIK AI Outcome Predictor")
 
 age = st.number_input("Age", 10, 70, value=None)
-sph = st.number_input("Spherical (D)", -10.0, 10.0, step=0.25, value=None, format="%.2f")
+sph = st.number_input("Spherical (D)", -15.0, 10.0, step=0.25, value=None, format="%.2f")
 cyl = st.number_input("Cylinder (D)", -6.0, 6.0, step=0.25, value=None, format="%.2f")
 k1 = st.number_input("K1 (D)", 35.0, 50.0, value=None, format="%.2f")
 k2 = st.number_input("K2 (D)", 35.0, 50.0, value=None, format="%.2f")
