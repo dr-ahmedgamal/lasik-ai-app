@@ -38,7 +38,7 @@ post_pachy = model_thickness.predict(input_features)[0]
 post_kavg = (post_k1 + post_k2) / 2
 ablation = pachy - post_pachy
 
-# Surgery Recommendation Logic
+# Surgery Recommendation Logic (hardcoded rules)
 def recommend_surgery():
     if (
         pachy >= 500 and
