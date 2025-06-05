@@ -18,17 +18,20 @@ bcva = st.number_input("Pre-op BCVA (decimal)", 0.0, 1.2, value=None, format="%.
 age = st.number_input("Age", 10, 70, value=None)
 
 if st.button("Predict"):
-    input_df = pd.DataFrame([[sph, cyl, k1, k2, pachy, bcva, age]],
-                            columns=["Spherical", "Cylinder", "K1", "K2", "Pachymetry", "Pre-op BCVA", "Age"])
+    if None in [sph, cyl, k1, k2, pachy, bcva, age]:
+        st.warning("Please fill in all fields before predicting.")
+    else:
+        input_df = pd.DataFrame([[sph, cyl, k1, k2, pachy, bcva, age]],
+                                columns=["Spherical", "Cylinder", "K1", "K2", "Pachymetry", "Pre-op BCVA", "Age"])
 
-    reg_pred = reg_model.predict(input_df)[0]
-    surgery = le.inverse_transform(class_model.predict(input_df))[0]
+        reg_pred = reg_model.predict(input_df)[0]
+        surgery = le.inverse_transform(class_model.predict(input_df))[0]
 
-    st.subheader("📈 Predicted Post-Op Results")
-    st.write(f"**BCVA:** {reg_pred[0]:.2f}")
-    st.write(f"**K1:** {reg_pred[1]:.2f}")
-    st.write(f"**K2:** {reg_pred[2]:.2f}")
-    st.write(f"**Corneal Thickness:** {int(reg_pred[3])} µm")
+        st.subheader("📈 Predicted Post-Op Results")
+        st.write(f"**BCVA:** {reg_pred[0]:.2f}")
+        st.write(f"**K1:** {reg_pred[1]:.2f}")
+        st.write(f"**K2:** {reg_pred[2]:.2f}")
+        st.write(f"**Corneal Thickness:** {int(reg_pred[3])} µm")
 
-    st.subheader("💡 Recommended Surgery Type")
-    st.success(surgery)
+        st.subheader("💡 Recommended Surgery Type")
+        st.success(surgery)
