@@ -4,11 +4,12 @@ import numpy as np
 import joblib
 import os
 
-# Load trained models
-model_bcva = joblib.load("models/model_bcva.pkl")
-model_k1 = joblib.load("models/model_k1.pkl")
-model_k2 = joblib.load("models/model_k2.pkl")
-model_thickness = joblib.load("models/model_thickness.pkl")
+# Load all models from single file
+models = joblib.load("models.pkl")
+model_bcva = models["bcva"]
+model_k1 = models["k1"]
+model_k2 = models["k2"]
+model_thickness = models["thickness"]
 
 st.set_page_config(page_title="LASIK Surgery Outcome Predictor", layout="centered")
 
