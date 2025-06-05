@@ -9,8 +9,8 @@ le = joblib.load("label_encoder.pkl")
 
 st.title("🔬 LASIK Surgery Outcome Predictor")
 
-sph = st.number_input("Spherical (D)", -10.0, 10.0, value=None, format="%.2f")
-cyl = st.number_input("Cylinder (D)", -6.0, 6.0, value=None, format="%.2f")
+sph = st.number_input("Spherical (D)", -10.0, 10.0, step=0.25, value=None, format="%.2f")
+cyl = st.number_input("Cylinder (D)", -6.0, 6.0, step=0.25, value=None, format="%.2f")
 k1 = st.number_input("K1 (D)", 35.0, 50.0, value=None, format="%.2f")
 k2 = st.number_input("K2 (D)", 35.0, 50.0, value=None, format="%.2f")
 pachy = st.number_input("Corneal Thickness (µm)", 400, 700, value=None)
