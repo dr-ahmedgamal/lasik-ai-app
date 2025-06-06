@@ -13,7 +13,7 @@ model_thickness = model_dict["thickness"]
 
 st.set_page_config(page_title="LASIK Surgery Outcome Predictor", layout="centered")
 
-st.title("🔬 LASIK Surgery Outcome Predictor")
+st.title("🔬 LASIK Predictor")
 
 # User Inputs (initial values adjusted)
 age = st.number_input("Age", min_value=18, max_value=70, format="%d", step=1)
