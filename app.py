@@ -11,7 +11,7 @@ model_k2 = model_dict["k2"]
 model_thickness = model_dict["thickness"]
 
 st.set_page_config(page_title="LASIK Surgery Outcome Predictor", layout="centered")
-st.title("🔬 LASIK Surgery Outcome Predictor")
+st.title("🔬 LASIK Predictor")
 
 # Inputs with correct naming and step formatting
 age = st.number_input("Age", min_value=18, max_value=70, step=1, format="%d")
