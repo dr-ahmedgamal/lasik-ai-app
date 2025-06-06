@@ -15,8 +15,8 @@ st.title("🔬 LASIK Surgery Outcome Predictor")
 
 # Inputs with correct naming and step formatting
 age = st.number_input("Age", min_value=18, max_value=70, step=1, format="%d")
-spherical = st.number_input("Spherical (D)", format="%.2f", step=0.25)
-cylinder = st.number_input("Cylinder (D)", format="%.2f", step=0.25)
+spherical = st.number_input("Spherical (D)", format="%.2f", step=0.25, value=None)
+cylinder = st.number_input("Cylinder (D)", format="%.2f", step=0.25, value=None)
 k1 = st.number_input("K1 (D)", format="%.2f", step=0.1, value=40.00)
 k2 = st.number_input("K2 (D)", format="%.2f", step=0.1, value=40.00)
 pachymetry = st.number_input("Corneal Thickness (µm)", format="%d", step=1, value=500)
