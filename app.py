@@ -10,7 +10,7 @@ model_k1 = model_dict["k1"]
 model_k2 = model_dict["k2"]
 model_thickness = model_dict["thickness"]
 
-st.set_page_config(page_title="LASIK Surgery Outcome Predictor", layout="centered")
+st.set_page_config(page_title="LASIK Predictor", layout="centered")
 st.title("🔬 LASIK Predictor")
 
 # Inputs with correct naming and step formatting
