@@ -14,14 +14,14 @@ st.set_page_config(page_title="LASIK Surgery Outcome Predictor", layout="centere
 
 st.title("🔬 LASIK Surgery Outcome Predictor")
 
-# User Inputs (initially blank)
+# User Inputs (initial values adjusted)
 age = st.number_input("Age", min_value=18, max_value=70, format="%d", step=1)
-sph = st.number_input("Spherical (D)", format="%.2f")
-cyl = st.number_input("Cylinder (D)", format="%.2f")
-k1 = st.number_input("K1 (D)", format="%.2f")
-k2 = st.number_input("K2 (D)", format="%.2f")
-pachy = st.number_input("Corneal Thickness (µm)", format="%d", step=1)
-bcva = st.number_input("Pre-op BCVA (decimal)", min_value=0.0, max_value=1.0, format="%.2f")
+sph = st.number_input("Spherical (D)", format="%.2f", step=0.25)
+cyl = st.number_input("Cylinder (D)", format="%.2f", step=0.25)
+k1 = st.number_input("K1 (D)", format="%.2f", step=0.01, value=40.00)
+k2 = st.number_input("K2 (D)", format="%.2f", step=0.01, value=40.00)
+pachy = st.number_input("Corneal Thickness (µm)", format="%d", step=1, value=500)
+bcva = st.number_input("Pre-op BCVA (decimal)", min_value=0.0, max_value=1.0, format="%.2f", step=0.1)
 
 if st.button("Predict"):
     if None in (age, sph, cyl, k1, k2, pachy, bcva):
