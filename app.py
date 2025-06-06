@@ -15,12 +15,12 @@ st.set_page_config(page_title="LASIK Surgery Outcome Predictor", layout="centere
 st.title("🔬 LASIK Surgery Outcome Predictor")
 
 # User Inputs (initially blank)
-age = st.number_input("Age", min_value=18, max_value=70, format="%d")
+age = st.number_input("Age", min_value=18, max_value=70, format="%d", step=1)
 sph = st.number_input("Spherical (D)", format="%.2f")
 cyl = st.number_input("Cylinder (D)", format="%.2f")
 k1 = st.number_input("K1 (D)", format="%.2f")
 k2 = st.number_input("K2 (D)", format="%.2f")
-pachy = st.number_input("Corneal Thickness (µm)", format="%d")
+pachy = st.number_input("Corneal Thickness (µm)", format="%d", step=1)
 bcva = st.number_input("Pre-op BCVA (decimal)", min_value=0.0, max_value=1.0, format="%.2f")
 
 if st.button("Predict"):
